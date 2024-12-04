@@ -120,10 +120,10 @@ Produto* removerProdutos(Produto *estoque){
 int main(){
     Produto* estoque;
     estoque = inicializar();
-    int menu;
+    int menu = -1;
     printf("\033[1;31m");
     
-    for(;menu != 0;){
+    while(menu != 0){
 
         printf("\n------------------------------------------------------------");
         printf("\n------------------Controle de Estoque-----------------------");
@@ -155,7 +155,8 @@ int main(){
             estoque = removerProdutos(estoque);
             break;
         case 0:
-            menu = 0;
+            printf("\nSaindo do Programa\n");
+            system("read -p \"\" dummy");
             break;
         default:
             printf("\nOpcao Invalida");
