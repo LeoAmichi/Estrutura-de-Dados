@@ -23,7 +23,7 @@ Produto* inicializar(){
 
 //Inserção
 Produto* inserir(Produto* destino){
-    system("clear");
+    system("cls");
 
     Produto* novo = (Produto*) malloc(sizeof(Produto));
 
@@ -46,14 +46,14 @@ Produto* inserir(Produto* destino){
 
     novo -> proximo = destino;
 
-   system("read -p \"\" dummy"); //Confirmação com Enter
+   system("pause"); //Confirmação com Enter
 
     return novo;
 }
 
 //Impressão
 void imprimir(Produto* produto){
-    system("clear");
+    system("cls");
 
     Produto* auxiliar;
 
@@ -65,12 +65,12 @@ void imprimir(Produto* produto){
         printf("\nValor: %f\n", auxiliar -> valor);
         printf("------------------------------------------------------------\n");
     }
-    system("read -p \"\" dummy");
+    system("pause");
 }
 
 //Busca
 void consultarProduto(Produto *estoque){
-    system("clear");
+    system("cls");
 
     Produto *auxiliar;
     int codigo;
@@ -83,24 +83,24 @@ void consultarProduto(Produto *estoque){
 
     for(auxiliar = estoque; auxiliar != NULL; auxiliar = auxiliar -> proximo){
         if(auxiliar -> codigo == codigo){
-            system("clear");
+            system("cls");
             printf("------------------------------------------------------------");
             printf("\nCodigo: %d", auxiliar -> codigo);
             printf("\nDescricao: %s", auxiliar -> descricao);
             printf("Quantidade: %d", auxiliar -> quantidade);
             printf("\nValor: %f\n", auxiliar -> valor);
             printf("------------------------------------------------------------\n");
-            system("read -p \"\" dummy");
+            system("pause");
             return;
         }
     }
     printf("Produto não encontrado\n\n");
-    system("read -p \"\" dummy");
+    system("pause");
 }
 
 //Remoção
 Produto* removerProdutos(Produto *estoque){
-    system("clear");
+    system("cls");
 
     Produto* anterior;
     Produto* auxiliar;
@@ -132,13 +132,13 @@ Produto* removerProdutos(Produto *estoque){
     free(auxiliar);
 
     printf("\nProduto removido!\n\n");
-    system("read -p \"\" dummy");
+    system("pause");
     return estoque;
 }
 
 //Controle de Estoque
 void buscaEstoque(volumeEstoque** volume, Produto* estoque){
-    system("clear");
+    system("cls");
 
     Produto* auxiliar;
     Produto* novoVolume = NULL;
@@ -183,7 +183,7 @@ void buscaEstoque(volumeEstoque** volume, Produto* estoque){
 
 //Impressão da nova Lista com os produtos abaixo do estoque
 void imprimirEstoqueAbaixo(Produto* volume){
-    system("clear");
+    system("cls");
 
     Produto* auxiliar;
 
@@ -195,7 +195,7 @@ void imprimirEstoqueAbaixo(Produto* volume){
         printf("\nValor: %f\n", auxiliar -> valor);
         printf("------------------------------------------------------------\n");
     }
-    system("read -p \"\" dummy");
+    system("pause");
 }
 
 //Main
@@ -245,14 +245,14 @@ int main(){
             break;
         case 0:
             printf("\nSaindo do programa...\n");
-            system("read -p \"\" dummy");
+            system("pause");
             break;
         default:
             printf("\nOpcao Invalida");
-            system("read -p \"\" dummy");
+            system("pause");
             break;
         }
-        system("clear");
+        system("cls");
     }
     return 0;
 }
